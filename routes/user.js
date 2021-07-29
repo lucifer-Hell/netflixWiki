@@ -35,9 +35,7 @@ router.get('/show',(req,res,next)=>{
    getShow(req.query.id).then((show)=>{
     if(show==null)
      req.flash('error','Show not found ')
-    if(req.user.userType=='admin')
-        res.render('approveOrDelete.ejs',{user:req.user,error:req.flash('error'),show})
-    else res.render('show.ejs',{user:req.user,error:req.flash('error'),show})
+    res.render('show.ejs',{user:req.user,error:req.flash('error'),show})
    })
    .catch(err=>next(err))
 
