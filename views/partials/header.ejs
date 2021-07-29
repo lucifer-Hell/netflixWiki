@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Wiki</title>
+    <link rel="stylesheet" href="../css/tailwind.css">
+  
+</head>
+<body class="font-sans relative bg-black  min-h-screen  overflow-x-hidden flex-col h-screen w-screen text-white m-0 p-0 grid grid-cols-1 flex-wrap">
+    <!-- Nav bar -->
+    <div class=" fixed top-0 flex flex-col items-start md:flex-row z-20 md:justify-center md:items-center bg-black text-red-600 shadow-2xl text-center w-screen">
+       
+        <div class=" flex flex-row justify-center items-center"> 
+            <span class="md:hidden w-2/12  flex-shrink    " id="menuIcon">
+                <img class="w-full " src="./images/menu-icon.svg">
+            </span>
+            <span class=" flex flex-shrink text-center w-6/12 text-3xl  lg:ml-auto pl-8 mr-auto font-extrabold tracking-widest ">NetflixWiki</span>
+        </div>
+       
+          <div class="hidden md:flex justify-end w-2/3 pr-4 ">
+              <!-- MENU -->
+              <button class="flex flex-shrink p-2 m-3 hover:bg-red-500 focus:outline-none  border-2 border-red-500 text-white shadow-xl rounded-sm"> <a class="text-xl pl-2 pr-2" href="./">Home</a></button>
+              <button class="p-2 m-3 hover:bg-red-500 focus:outline-none  border-2 border-red-500 text-white shadow-xl rounded-sm"> <a class="text-xl pl-2 pr-2" href="./search">Search</a></button>
+
+              <% let user=data %>
+              <% if(user==null){ %>
+              <button class="p-2 m-3 hover:bg-red-500 focus:outline-none  border-2 border-red-500 text-white shadow-xl rounded-sm"> <a class="text-xl pl-2 pr-2" href="./login" >Login</a></button>
+              <button class="p-2 m-3 hover:bg-red-500 focus:outline-none  border-2 border-red-500 text-white shadow-xl rounded-sm"> <a class="text-xl pl-2 pr-2" href="./signUp">Sign Up</a></button>
+              <%} else { %>
+                <button class="p-2 m-3 hover:bg-red-500 focus:outline-none  border-2 border-red-500 text-white shadow-xl rounded-sm"> <a class="text-xl pl-2 pr-2" href="./addOrEdit">Add a Review</a></button>
+                <button class="p-2 m-3 hover:bg-red-500 focus:outline-none  border-2 border-red-500 text-white shadow-xl rounded-sm"> <a class="text-xl pl-2 pr-2" href="./logOut">Log Out</a></button>
+               <% } %>
+              
+          </div>
+          <div id="mobileMenu" class="   flex-col w-full pr-4 hidden md:hidden ">
+            <!-- MENU -->
+            <button class="p-2 m-3 hover:bg-red-500 focus:outline-none  border-2 border-red-500 text-white shadow-xl rounded-sm"> <a class="text-xl pl-2 pr-2" href="./">Home</a></button>
+            <button class="p-2 m-3 hover:bg-red-500 focus:outline-none  border-2 border-red-500 text-white shadow-xl rounded-sm"> <a class="text-xl pl-2 pr-2" href="./search">Search</a></button>
+            
+            <% if(user==null){ %>
+            <button class=" p-2 m-3 hover:bg-red-500 focus:outline-none  border-2 border-red-500 text-white shadow-xl  rounded-sm"><a class="text-xl pl-2 pr-2" href="./login" >Login</a></button>
+            <button class="p-2 m-3 hover:bg-red-500 focus:outline-none  border-2 border-red-500 text-white shadow-xl rounded-sm"><a class="text-xl pl-2 pr-2" href="./signUp">Sign Up</a></button>
+            <%} else { %>
+            <button class="p-2 m-3 hover:bg-red-500 focus:outline-none  border-2 border-red-500 text-white shadow-xl rounded-sm"> <a class="text-xl pl-2 pr-2" href="./addOrEdit">Add a Review</a></button>
+            <button class="p-2 m-3 hover:bg-red-500 focus:outline-none  border-2 border-red-500 text-white shadow-xl rounded-sm"> <a class="text-xl pl-2 pr-2" href="./logOut">Log Out</a></button>
+            <% } %>
+          </div>
+
+    </div>

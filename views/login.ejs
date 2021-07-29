@@ -1,0 +1,25 @@
+<% let data ;%>
+<%- include( ("partials/header.ejs"), {data:data}) %>
+<div class="mt-12 w-screen h-screen flex justify-center items-center">
+    <form class=" grid grid-cols-1 w-5/6 h-5/6 border-2 border-red-300  justify-center items-center" action="/login" method="POST">
+        <div class="flex items-center justify-center w-full text-4xl ">
+           Login 
+        </div>
+        <div class="flex items-center justify-center w-full text-2xl ">
+                <%=error %>
+        </div>
+        
+        <div class=" grid grid-cols-1 md:grid-cols-2  items-center justify-center w-full ">
+                    <div class=" flex w-full justify-center  items-center">email-id :</div>
+                    <div class="flex w-full justify-center items-center   "><input class="text-black w-3/4 pl-2  " name="username"  placeholder="enter email id " type="text"> </div>
+        </div>
+        <div class=" grid grid-cols-1 md:grid-cols-2  items-center justify-center w-full ">
+            <div class=" flex w-full justify-center  items-center">password :</div>
+            <div class="flex w-full justify-center items-center   "><input class="text-black w-3/4 pl-2  " name="password"  placeholder="enter password" type="text"> </div>
+        </div>
+        <div class="grid grid-cols-1 items-center justify-center w-full ">
+            <button class=" w-3/6 p-2 m-auto hover:bg-red-500 focus:outline-none  border-2 border-red-500 text-white shadow-xl rounded-sm" type="submit"> Submit</button>
+        </div>
+    </form>
+</div>
+<%-include('./partials/footer.ejs') %>

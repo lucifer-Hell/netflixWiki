@@ -1,0 +1,33 @@
+<% let data=user %>
+<% console.log(data) %>
+<%- include( ("partials/header.ejs"), {data:data}) %>
+    <!-- Content  -->
+    <div class="flex flex-col justify-center items-center mt-24 bg-black w-11/12 h-full flex-wrap  ">
+        <Label for="title" class=" flex justify-center text-2xl   "><%= error %></Label>
+        <form class="w-10/12 h-full  grid grid-cols-1 md:grid-cols-3 p-2 gap-1  justify-center items-center border-red-200 border-4" action="/addOrEdit" enctype="multipart/form-data" method="post">
+              
+               <Label for="title" class=" flex justify-center text-2xl   ">Title</Label>
+               <input class="m-auto col-span-1 md:col-span-2 flex-shrink text-2xl w-10/12 text-black p-3" type="text" name="title"  id="title">
+               <Label for="coverImage" class="flex flex-col items-center justify-center p-3 text-2xl ">Cover Image
+                   <span class="text-base text-center">
+                    (choose only if you are uploading first time or want to reupload )
+                   </span>
+                </Label>
+               <input class="m-auto  col-span-1 md:col-span-2 text-xl w-10/12 p-6   " type="file" name="coverImage" id="coverImage">
+               <Label for="secondImage" class="flex flex-col items-center justify-center p-3 text-2xl ">Second Image
+                <span class="text-base text-center">
+                 (choose only if you are uploading first time or want to reupload )
+                </span>
+                </Label>
+                <input class="m-auto  col-span-1 md:col-span-2 text-xl w-10/12 p-6   " type="file" name="secondImage" id="secondImage">
+               <Label for="title" class="flex justify-center text-2xl ">Review(Part 1)</Label>
+               <textarea class="m-auto col-span-1 md:col-span-2 flex-shrink text-left text-base w-10/12  h-80 text-black p-3 mb-4 " type="text"  id="Review1" name="main" placeholder="Type your review here "></textarea>
+               <Label for="title" class="flex justify-center text-2xl ">Review(Part 2)</Label>
+               <textarea class="m-auto col-span-1 md:col-span-2 flex-shrink text-left text-base w-10/12  h-80 text-black p-3 " type="text"  id="Review2" name="sub" placeholder="Type your review here "></textarea>
+               <button class=" ml-auto mr-auto mt-3 mb-3 p-3 col-span-1 md:col-span-3  text-lg md:text-xl w-4/12  bg-black border-2 border-red-600 hover:bg-red-600 " type="submit"  id="submit">
+                Submit
+                </button>
+        </form>
+        
+    </div>
+<%-include('./partials/footer.ejs') %>

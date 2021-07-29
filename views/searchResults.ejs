@@ -1,0 +1,25 @@
+
+<% let data=user %>
+<% console.log(data) %>
+<%- include( ("partials/header.ejs"), {data:data}) %>
+
+<div class="flex flex-col justify-center items-center m-8 p-8  grid-cols-1 ">
+<div class="text-center text-3xl text-white">
+    Search Results
+</div>
+<div class=" flex flex-row justify-center items-center m-2 p-4 grid-cols-3">
+    <!-- <% console.log(shows) %> -->
+    <% if (shows){ %>
+    <%- include( './showList.ejs')  %> 
+    <% } else {  %>
+        <div class="text-center text-xl text-white">
+           <%= error.message %>
+        </div>
+    <% } %>
+</div>
+
+</div>
+
+
+
+<%- include('./partials/footer.ejs') %>

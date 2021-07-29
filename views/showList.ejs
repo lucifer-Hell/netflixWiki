@@ -1,0 +1,24 @@
+
+    <div  class="m-3 grid grid-cols-1 md:grid-cols-3 gap-8 p-5 ">
+        
+       <% shows.forEach((show)=>{  %>
+            
+            <div class="bg-gray-600 w-64 h-64 gap-3 m-3 flex-wrap">
+                <div class="bg-gray-600 rounded-sm h-1/6 text-center"><%= show.title %> </div>
+                <% let imgsrc= "data:"+show.contentType+";base64,"+show.coverImage %>
+                <div class="h-4/6"><img src=<%= imgsrc %> class=' w-full h-full'></div>
+                <div class="h-1/6 bg-gray-600 flex justify-end items-end">
+                    <form method="GET" action='/show'>
+                        <!-- <% console.log(show.id) %> -->
+                        <button class=" m-1 hover:bg-red-500 focus:outline-none  bg-gray-600 text-xl  text-white shadow-xl rounded-sm "  name="id" id="id" value=<%=show.id %> type="submit"> 
+                            <span class="text-xl pl-2 pr-2">Read </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+       <% }); %>
+            
+     
+      
+   
+    </div>  

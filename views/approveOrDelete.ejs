@@ -1,0 +1,46 @@
+<% let data ;%>
+<%- include( ("partials/header.ejs"), {data:user}) %>
+
+
+
+    <div class="mt-20  grid grid-cols-1  justify-self-center self-center w-10/12 items-center place-content-center ">
+        <div name="showTitle" class="flex flex-row justify-center  w-full h-4/6  ">
+                <span class="text-5xl flex-shrink"> <%=show.title %> </span> 
+        </div>
+        <div name="coverImage" class="flex self-center items-center justify-center   w-full h-4/6  ">
+            <% let imgsrc= "data:"+show.contentType+";base64,"+show.coverImage %>
+            <img src= <%= imgsrc %> class=" w-full md:w-4/6 h-full" alt="" srcset="">
+        </div>
+        <div class="text-justify text-lg m-3">
+                <%=show.main %>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 m-3">
+            <div class="text-justify text-lg">
+                <%=show.sub %>
+            </div>
+            <div class="flex justify-center p-3" >
+                <% let imgsrc2= "data:"+show.contentType+";base64,"+show.secondImage %>
+                <img class="w-4/6 h-full " src=<%=imgsrc2 %> alt="" srcset="">
+            </div>
+        </div>
+
+        <form method="GET" action='/delete'>
+            <!-- <% console.log(show.id) %> -->
+            <button class=" m-1 hover:bg-red-500 focus:outline-none  bg-gray-600 text-xl  text-white shadow-xl rounded-sm "  name="id" id="id" value=<%=show.id %> type="submit"> 
+                <span class="text-xl pl-2 pr-2">delete show </span>
+            </button>
+        </form>
+
+        <form method="GET" action='/approve'>
+            <!-- <% console.log(show.id) %> -->
+            <button class=" m-1 hover:bg-red-500 focus:outline-none  bg-gray-600 text-xl  text-white shadow-xl rounded-sm "  name="id" id="id" value=<%=show.id %> type="submit"> 
+                <span class="text-xl pl-2 pr-2">delete show </span>
+            </button>
+        </form>
+        
+
+    </div>
+
+
+
+    <%- include('./partials/footer.ejs') %>

@@ -1,0 +1,22 @@
+
+<% let data=user %>
+<% console.log(data) %>
+<%- include( ("partials/header.ejs"), {data:data}) %>
+
+<div class="mt-6 mb-6 grid grid-cols-1 mx-auto grid-flow-row">
+
+    <div style="background-image: url('./images/5.jpg');" class=" mt-10 mb-10  bg-cover  bg-center bg-no-repeat flex justify-center items-center w-screen h-screen">
+        <button class="p-2 m-11 hover:bg-red-500 focus:outline-none  bg-black  text-white shadow-xl rounded-sm border-red-500 border-2"> <a class="text-xl pl-2 pr-2" href="#intro">Lets Get Started </a></button>
+    </div>
+    <div class="w-full h-screen mt-9 " id="intro" >  
+        <div class="mt-16 mb-16 min-h-screen w-screen text-3xl flex flex-col items-center justify-center h-full " >
+            <div id="titles" >  Latest Reviews  </div>
+                 <%- include( './showList.ejs') %>
+         </div>
+    
+    </div>
+
+</div> 
+
+
+<%- include('./partials/footer.ejs') %>
