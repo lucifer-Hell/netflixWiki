@@ -23,18 +23,18 @@
                 <img class="w-4/6 h-full " src=<%=imgsrc2 %> alt="" srcset="">
             </div>
         </div>
-
-        <form method="GET" action='/delete'>
-            <!-- <% console.log(show.id) %> -->
-            <button class=" m-1 hover:bg-red-500 focus:outline-none  bg-gray-600 text-xl  text-white shadow-xl rounded-sm "  name="id" id="id" value=<%=show.id %> type="submit"> 
-                <span class="text-xl pl-2 pr-2">delete show </span>
+        <form method="POST" action='/approve'>
+          
+            <input class="hidden" name="id" value="<%=show.id%>">
+            <button class=" m-1 hover:bg-red-500 focus:outline-none  bg-gray-600 text-xl  text-white shadow-xl rounded-sm "   type="submit"> 
+                <span class="text-xl pl-2 pr-2">Approve </span>
             </button>
         </form>
 
-        <form method="GET" action='/approve'>
-            <!-- <% console.log(show.id) %> -->
-            <button class=" m-1 hover:bg-red-500 focus:outline-none  bg-gray-600 text-xl  text-white shadow-xl rounded-sm "  name="id" id="id" value=<%=show.id %> type="submit"> 
-                <span class="text-xl pl-2 pr-2">delete show </span>
+        <form method="POST" action='/reject'>
+            <input class="hidden" name="id" value="<%=show.id%>">
+            <button class=" m-1 hover:bg-red-500 focus:outline-none  bg-gray-600 text-xl  text-white shadow-xl rounded-sm "   type="submit"> 
+                <span class="text-xl pl-2 pr-2">Reject </span>
             </button>
         </form>
         

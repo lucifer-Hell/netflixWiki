@@ -7,7 +7,7 @@ const userSchema=new mongoose.Schema({
     profilePhoto:String,
     contactNo:String,
     password:{type:String,required: true},
-    userType:String,
+    userType:{type:String,default:'user'},
     reviewsAdded:[{id:mongoose.Types.ObjectId}],
     extras:{},
 })

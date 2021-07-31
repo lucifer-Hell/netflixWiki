@@ -8,7 +8,7 @@ const showSchema=new mongoose.Schema({
     main:String,
     sub:String,
     authorId:{type:mongoose.Schema.Types.ObjectId,required:true},
-    likes:{type:Number,default:0},
+    likes:[{id:mongoose.Schema.Types.ObjectId}],
     extras:{},
     approved:{type:Boolean,default:false}
 })

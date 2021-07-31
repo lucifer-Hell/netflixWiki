@@ -8,7 +8,6 @@
                 <span class="text-5xl flex-shrink"> <%=show.title %> </span> 
         </div>
         <div name="coverImage" class="flex self-center items-center justify-center   w-full h-4/6  ">
-         
             <% let imgsrc= "data:"+show.contentType+";base64,"+show.coverImage %>
             <img src= <%= imgsrc %> class=" w-full md:w-4/6 h-full" alt="" srcset="">
         </div>
@@ -24,8 +23,10 @@
                 <img class="w-4/6 h-full " src=<%=imgsrc2 %> alt="" srcset="">
             </div>
         </div>
-        <div class="flex justify-center items-center ">
-            <button class="p-2 m-11 w-2/6  flex justify-center hover:bg-red-500 focus:outline-none  bg-black  text-white shadow-xl rounded-sm border-red-500 border-2"> <a class="text-xl pl-2 pr-2" href="#intro">Like :<%= show.likes %> </a></button>
+        <div class="flex flex-col  md:flex-row justify-center items-center ">
+            <% console.log("show id "+show.id) %>
+            <button class="p-2 m-11 w-2/6  flex justify-center hover:bg-red-500 focus:outline-none  bg-black  text-white shadow-xl rounded-sm border-red-500 border-2"> <a class="text-xl pl-2 pr-2" href="/like?id=<%=show.id%>">Like :<%= show.likes.length %> </a></button>
+            <button class="p-2 m-11 w-2/6  flex justify-center hover:bg-red-500 focus:outline-none  bg-black  text-white shadow-xl rounded-sm border-red-500 border-2"> <a class="text-xl pl-2 pr-2" href="/addOrEdit?id=<%=show.id%>">Edit </a></button>
         </div>
 
     </div>

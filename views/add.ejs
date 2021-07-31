@@ -1,13 +1,13 @@
-<% let data=user %>
+<% let data=null %>
 <% console.log(data) %>
-<%- include( ("partials/header.ejs"), {data:data}) %>
+<%- include( ("partials/header.ejs"), {data:user}) %>
     <!-- Content  -->
-    <div class="flex flex-col justify-center items-center mt-24 bg-black w-11/12 h-full flex-wrap  ">
-        <Label for="title" class=" flex justify-center text-2xl   "><%= error %></Label>
-        <form class="w-10/12 h-full  grid grid-cols-1 md:grid-cols-3 p-2 gap-1  justify-center items-center border-red-200 border-4" action="/addOrEdit" enctype="multipart/form-data" method="post">
+    <div class="flex  justify-center items-center mt-24 bg-black w-11/12 h-full flex-wrap  ">
+        <Label for="title" class=" flex justify-center text-2xl p-4   "><%= error %></Label>
+        <form class="w-10/12 h-full  grid grid-cols-1 md:grid-cols-3 p-2 gap-1  justify-center items-center border-red-200 border-4" action="/add" enctype="multipart/form-data" method="post">
               
                <Label for="title" class=" flex justify-center text-2xl   ">Title</Label>
-               <input class="m-auto col-span-1 md:col-span-2 flex-shrink text-2xl w-10/12 text-black p-3" type="text" name="title"  id="title">
+               <input class="m-auto col-span-1 md:col-span-2 flex-shrink text-2xl w-10/12 text-black p-3" type="text" name="title"  id="title"  >
                <Label for="coverImage" class="flex flex-col items-center justify-center p-3 text-2xl ">Cover Image
                    <span class="text-base text-center">
                     (choose only if you are uploading first time or want to reupload )
