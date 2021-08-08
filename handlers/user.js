@@ -1,10 +1,12 @@
 const User=require('../models/user').User
 async function registerUser(user){
     // if user is valid register him or her
-    // console.log(user.firstName)
-    const docExist=await User.find(user)
+    
+    const docExist=await User.findOne({email:user.email})
+    
     if(docExist)return null;
     const doc=new User({...user})
+    
     await doc.save();
     return doc
 }

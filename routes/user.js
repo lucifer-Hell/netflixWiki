@@ -119,18 +119,21 @@ router.get('/searchResults',(req,res)=>{
 router.post('/login',passport.authenticate('local',{successRedirect:'/',failureRedirect:'/login',failureMessage:'Invalid email-id  OR Password ',failureFlash:true}))
 
 router.post('/signUp',(req,res)=>{
-    // console.log("opening")
+  
     registerUser(req.body).then((data)=>{
-        if(data) res.redirect('/login')
+        if(data) {
+            req.flash('error','Sucesfully registered')
+            res.redirect('/login')
+        }
         else {
-            req.flash('message','Email id already registered ')
+            req.flash('error','Email id already registered ')
             res.redirect('/signUp')
         }
     }).catch((err)=>{
         // res.send(err)
         console.log("errorr occured on signup ")
         console.log(err)
-        req.flash('message','User Details Invalid ')
+        req.flash('error','User Details Invalid ')
         res.redirect('/signUp')
     })
 })
